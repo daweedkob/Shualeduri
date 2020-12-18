@@ -9,12 +9,12 @@ class EmployeeController extends Controller
 {
     public function ViewEmployees(Request $request){
         $employees = Employee::orderby('id',"DESC")->get();
-        return view("employee-page")
+        return view("employee.employee-page")
         ->with('employees', $employees);
     }
 
     public function AddEmployee(){
-        return view('employee-add');
+        return view('employee.employee-add');
     }
     public function SaveEmployee(Request $request){
         Employee::create([
@@ -29,7 +29,7 @@ class EmployeeController extends Controller
 
     public function EditEmployee(Request $request, $id){
         $employee_to_edit = Employee::where('id', $id)->firstOrFail();
-        return view('employee-edit')
+        return view('employee.employee-edit')
         ->with('employee',$employee_to_edit);
     }
 

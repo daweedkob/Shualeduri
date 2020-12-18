@@ -11,9 +11,10 @@
 </head>
 
 <body>
+    @include('Layouts.menu')
     <div class="container">
         <table class='table'>
-            <a href="/company/add">Add new company</a>
+            <a href="{{ route('company.add') }}">Add new company</a>
             <thead>
                 <th>ID</th>
                 <th>Name</th>

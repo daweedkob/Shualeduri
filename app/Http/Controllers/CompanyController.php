@@ -9,12 +9,12 @@ class CompanyController extends Controller
 {
     public function ViewCompanies(Request $request){
         $companies = Company::orderby('id',"DESC")->get();
-        return view("company-page")
+        return view("company.company-page")
         ->with('companies', $companies);
     }
 
     public function AddCompany(){
-        return view('company-add');
+        return view('company.company-add');
     }
     public function SaveCompany(Request $request){
         Company::create([
@@ -29,7 +29,7 @@ class CompanyController extends Controller
 
     public function EditCompany(Request $request, $id){
         $company_to_edit = Company::where('id', $id)->firstOrFail();
-        return view('company-edit')
+        return view('company.company-edit')
         ->with('company',$company_to_edit);
     }
 

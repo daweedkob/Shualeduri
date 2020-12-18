@@ -13,20 +13,7 @@
 <body>
     <div class="container">
         <table class='table'>
-            <a href="/employee/add">Add new employee</a>
-            <form action="/employee/save" method="post">
-            @csrf
-            <tr></tr>
-                <td colspan = "2"><input type = "text" name= "name" class= "form-control" placeholder = "Name" /></td>
-                <td><input type    = "text" name= "lastname" class = "form-control" placeholder = "Lastname" /></td>
-                <td><input type    = "date" name= "birthdate" class= "form-control" placeholder = "Birthdate" /></td>
-                <td><input type    = "number" name= "personal_id" class= "form-control" placeholder = "Personal id" /></td>
-                <td><input type    = "number" name= "salary" class= "form-control" placeholder = "Salary" /></td>
-                <td></td>
-                <td></td>
-                <td><button class = "btn btn-success">Add</button></td>
-            </tr>
-        </form>
+            <a href="{{ route('employee.add') }}">Add new employee</a>
             <thead>
                 <th>ID</th>
                 <th>Name</th>

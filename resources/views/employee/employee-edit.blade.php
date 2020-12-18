@@ -15,7 +15,7 @@
             <h3>Edit employee</h3>
         </div>
 
-    <form action='/employee/update' method="post">
+    <form action='{{ route('employee.update') }}' method="post">
         @csrf
         <input type="hidden" name="employee_id" value = "{{ $employee->id }}" >
 
